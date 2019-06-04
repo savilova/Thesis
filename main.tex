@@ -6,6 +6,7 @@
 \setmarginsrb{3cm}{2cm}{1cm}{2cm}{0pt}{0mm}{0pt}{13mm}
 \usepackage{indentfirst}
 \usepackage{graphicx}
+\usepackage{wrapfig}
 \sloppy
 
 
@@ -16,7 +17,6 @@
 	
 	%\setcounter{secnumdepth}{-1} % чтоб не нумеровались главы
 	
-	Аннотация: Аннотация работы может содержать не более 1500 знаков. Пишется отдельно.
 	
 	\tableofcontents
 	
@@ -37,8 +37,7 @@ The properties of the final product obtained by the SLS technology largely depen
 	[vaganov corrected]
 	
 	\section{Про ПИ}
-	
-	\includegraphics[width=\textwidth]{formula.png}
+
 	
 	ПИ это круто и вот почему:
 	Свойства: глава1
@@ -76,30 +75,131 @@ of 14th International Saint Petersburg Conference
 of Young Scientists]	
 
 \section{А при чем тут структура?}
+нерешенные проблемы
+
+актуальность
+
 +цели и задачи
 
 
 	\addcontentsline{toc}{chapter}{Введение}
 	
-	\chapter*{Список обозначений и сокращений}
-	
-	СИ -- синхротронное излучение\\
-	Р-ОДФО -- наш полимер\\
-	WAXS -- широкоугловое рассеяние\\
-	и тд и тп
+%	\chapter*{Список обозначений и сокращений}
+%	СИ -- синхротронное излучение\\
+%	Р-ОДФО -- наш полимер\\
+%	WAXS -- широкоугловое рассеяние\\
+%	и тд и тп
 	
 	\chapter{Теория}
 	
+	\section{Кристалличность полимеров}
+
+
+\subsection{Степень кристалличности}
 	
+	\begin{wrapfigure}{r}{0.5\textwidth} 
+\vspace{-20pt}
+  \begin{center}
+    \includegraphics[width=0.4\textwidth]{crystal-1.png}
+    \caption{Как цепочки складываются в ламели}
+    \label{fig:crystal-1}
+  \end{center}
+  \vspace{-20pt}
+  \vspace{1pt}
+\end{wrapfigure}
+	
+	
+	\begin{wrapfigure}{r}{0.5\textwidth} 
+\vspace{-20pt}
+  \begin{center}
+    \includegraphics[width=0.4\textwidth]{crystal-2.jpg}
+    \caption{К определению кристалличности полимеров}
+    \label{fig:crystal-2}
+  \end{center}
+  \vspace{-20pt}
+  \vspace{1pt}
+\end{wrapfigure}	
+	
+\subsection{Кристаллические структуры}
+
+\begin{figure}
+    \includegraphics[width=\textwidth]{crystallites.jpg}
+    \caption{Типы кристаллитов}
+    \label{fig:crystallites}
+\end{figure}
+
+
+	частичность
+	
+	фазы, кристаллиты
+	
+\subsection{Полиэфиримиды ряда R-BAPB }
+структура
+
+Что следует из первичной структуры, термостойкость, особенности, пригодность для СЛС, перспективность
+
+Данные по композитным добавкам
+
+характеристики - все что измерили в ИВС
+
+Что еще нужно выясеить
+
+		
+	\begin{figure}
+	\includegraphics[width=\textwidth]{formula.png}
+	\end{figure}
+	
+	\section{Модель процесса спекания}
+	
+	\section{Дифракция}
+	когерентные источники, йоу!
+	
+	эффекты от аморфной части
+	
+	
+    \section{Что известно про imaging}
+    в теории
+    
+    гаусс,войт, интегралы
 	
 	\chapter{Эксперимент}
-	
+
 	\section{Материалы}
+	
+	
+	
+	\section{РСА}
+	
+	\subsection{Почему этот метод}
+	когерентность и здоровая статистика
+	
+	\subsection{Обработка резлультатов}
+	
+	\paragraph{Rolling-ball}
+	погрешности, чем хорошо, почему он, какие еще бывают
+	
+	А код - в приложении!
+	
+	\begin{figure}
+    \includegraphics[width=\textwidth]{rolling-ball.jpg}
+    \caption{Принцип работы алгоритма}
+    \label{fig:rolling-ball}
+\end{figure}
+
+    \paragraph{фиттинг}
+
+	
+	\paragraph{Карты кристалличности}
+	
+	
+
+	
+	
 	
 	Свойства и результаты прочих исследований:
 	[Vaganov corrected]
 	
-	
+	\chapter{Результаты и обсуждение}
 	
 	\chapter*{Заключение}
 	\addcontentsline{toc}{chapter}{Заключение}
