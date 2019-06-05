@@ -3,7 +3,7 @@
 	\section{Материалы}
 	
 	
-	\begin{figure}
+	\begin{figure}[h]
 	    \centering
 	    \includegraphics[width=\linewidth]{fig/particles}
 	    \caption{Caption}
@@ -11,12 +11,40 @@
 	\end{figure}
 	
 	\section{Схема эксперимента}
+	\subsection{Источник излучения}
+	
+	Измерения проводились на микрофокусной линии D13 Европейского центра синхротронного излучения (ERSF).
+	
+		\begin{figure}[h]\center
+\begin{tabular}{cc}
+\includegraphics[width=0.5\linewidth]{fig/pribor-scheme.jpg}
+&
+\includegraphics[width=0.5\linewidth]{fig/pribor-photo.jpg}
+\end{tabular}
+\caption{Синхротрон ERSF}
+\end{figure}
+	
+\subsection{Микрофокусный сканирующий эксперимент}
+
 	
 	\section{Получение и первичная обработка данных}
+	\paragraph{1D или 2D}
 	
 	\section{Вычитание фона, аппроксимация пиков}
+	Распознавание кристаллических пиков и аморфного фона производилось с помощью алгоритма "Rolling ball". \\
+	Принуип действи понятен из рис. \ref{fig:ball}
 	
-	\begin{lstlisting}[language=Python, caption=Python example]
+	\begin{figure}[h]
+	    \centering
+	    \includegraphics[width=\linewidth]{fig/ball.PNG}
+	    \caption{Caption}
+	    \label{fig:ball}
+	\end{figure}
+	Данный алгоритм применяется при анализе данных рентгеновской дифракции, рамановской спектроскопии и пр. []. Как правило он применяется к двумерным дифрактограммам кристаллических материалов, как например, в работе \cite{ball2018}. Однако подходящая реализация для одномерных профилей, необходимая в случае дифракции на полимерах, не представлена в открытых источниках. Ниже (листинг \ref{lst:ball}) приведена адаптация алгоритма из работы \cite{ball-code}, реализованная на языке Python. 
+	
+	
+	\begin{lstlisting}[language=Python, caption=Python example, label={lst:ball}]
+	
 import numpy as np
  
 def incmatrix(genl1,genl2):
@@ -52,26 +80,11 @@ def incmatrix(genl1,genl2):
 	
 	\section{Параметры решетки, расчеты}
 	
-
-	
-	\paragraph{интегрирование распознавание пиков}
-	че получили:
-		\begin{figure}
-    \includegraphics[width=\textwidth]{fig/rolling-ball.jpg}
-    \caption{Принцип работы алгоритма}
-    \label{fig:rolling-ball}
-\end{figure}
 	
 	\paragraph{Rolling-ball}
 	погрешности, чем хорошо, почему он, какие еще бывают
 	
-	А код - в приложении!
-	
-	\begin{figure}
-    \includegraphics[width=\textwidth]{fig/rolling-ball.jpg}
-    \caption{Принцип работы алгоритма}
-    \label{fig:rolling-ball}
-\end{figure}
+
 
     \paragraph{фиттинг}
 
@@ -86,6 +99,9 @@ def incmatrix(genl1,genl2):
 	
 	\begin{figure}[ht]\center
 \begin{tabular}{cc}
+\includegraphics[width=0.5\linewidth]{fig/map-1.png}
+&
+\includegraphics[width=0.5\linewidth]{fig/map-2.png} \\
 \includegraphics[width=0.5\linewidth]{fig/map-1.png}
 &
 \includegraphics[width=0.5\linewidth]{fig/map-2.png}
