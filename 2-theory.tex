@@ -1,5 +1,13 @@
 \section{Селективное лазерное спекание}
 
+
+\subsection{Технология}
+Polymer laser sintering (LS) is an important additive manufacturing (AM) technology. Individual and complex parts are
+directly produced from CAD data without the need of specific tools. The raw material is a polymer powder, which is deposited layerwise
+and melted selectively with a laser. Built parts are embedded in residual unmolten powder
+
+
+
 \begin{figure}[h]
     \centering
     \includegraphics[width=\linewidth]{fig/sls-2d.pdf}
@@ -7,10 +15,74 @@
     \label{fig:printer}
 \end{figure}
 
+
 \paragraph{Что это вообще}
 \paragraph{Общий принцип. }Процесс печати изделия изображен схематически на рис. \ref{fig:printer}.
+The
+feed powder hopper (1) dispenses a polymer powder into a
+recoater unit (2) which moves in x direction and thereby
+recoats thin powder layers onto the build platform (5). Residual
+powder is collected in an overflow bin (6). After each layer, the
+platform moves down in z direction. Typical layer thicknesses
+are about 50 to 200 mm. During the build process, the so-called
+part cake (3) “grows” from the bottom to the top. By volume,
+it typically consists of about 90% unsintered (aged) powder and
+of about 10% built parts (4). In each layer, the whole part cake
+surface is preheated with infrared heaters (7) up to 2 to 5 K
+below melting temperature of the material. The energy needed
+to fully melt the powder is brought in with a CO2 laser (8) that
+selectively melts the desired slice geometry. In this phase,
+unmolten powder and molten parts remain quasi-isothermal
+within the same layer.7 This so-called temperature window has
+to be lower than the melting temperature and higher than the
+recrystallization temperature of the material8 in order to prevent
+warpage during the manufacturing process. Hence, heating up
+the whole part cake is a prerequisite for a reliable LS process.
+To reduce oxidation, the process chamber is purged with nitrogen
+(residual oxygen <2%). When the build process finishes,
+the part cake is first cooled down within the machine for about
+10 h (nitrogen flow) and then outside of the machine until the
+core temperature is below glass transition temperature. Then,
+the parts are removed from the, unmolten powder. With total
+build heights of up to 600 mm, typical layer thicknesses of
+about 100 mm and layer times of about 10 of 40 s, the overall
+manufacturing process may take many hours or even days,4
+resulting in various powder ageing effects.
+
+
+
+
+Polymer laser sintering (LS) is an important additive manufacturing (AM) technology. Individual and complex parts are
+directly produced from CAD data without the need of specific tools. The raw material is a polymer powder, which is deposited layerwise
+and melted selectively with a laser. Built parts are embedded in residual unmolten powder
+
+
+
+
+
 \paragraph{Особенности сравнению с традиционными методами.}
+Thereby, product development times can be reduced tremendously.
+Other advantages are, for example, the fast and costefficient
+production of low-volume, individual and complex parts
+and structures.3
 \paragraph{Особенности по сравнению с другой 3д-печатью.}
+
+\subsection{Сращивание частиц порошка при СЛС}
+Laser-based consolidation of 3D parts from layers of
+powder material pre-deposited on a ‘build platform’ is
+commonly referred to as Selective Laser Sintering (SLS)
+or Selective Laser Melting (SLM). The distinction between
+SLS and SLM is rough, vague and does not cover all
+
+Классификация схематически показана на рис.\ref{fig:binding}
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width = \linewidth]{fig/binding.PNG}
+    \caption{Механизмы консолидации порошка}
+    \label{fig:binding}
+\end{figure}
+
 \paragraph{Симуляция процесса close-up.}
 
 
@@ -23,13 +95,31 @@
 
 \section{Требования к материалам для СЛС}
 
+
+
+
 %вступление
+The availability of suitable LS polymer powders is quite limited.
+The manufacturing process requires certain polymer properties,
+mainly a large process window and a low melt viscosity,4 and
+particle/powder properties, for example, a good flowability and
+high bulk density.9,10 Due to these limitations, the majority of
+all LS applications is currently based on polyamide 12 (see Figure
+2)
+
+
 Конечные характеристики изделия, полученного по технологии СЛС, во многом зависят от от свойств начального порошка (морфология, размер, распределние размеров, объемная плотность, термические свойства, вязкость, поверхностное натяжение )  и параметров спекания (мощность лазера, скорость сканирования, диаметр пятна излучения лазера ).
 
 \subsection{Механические характеристики}
 первая глава из
 \cite{termopols}
 \subsection{Тепловые характеристики}
+
+Built parts are embedded in residual unmolten powder, the so-called part cake, which undergoes
+thermal ageing effects due to the exposure to high temperatures for long times during the manufacturing process. Hence, the
+recyclability of the unmolten powder is limited. \cite{ageing}
+
+
 \subsection{Морфология частиц порошка}
 Морфология частиц определяет пространственное расположение частиц порошка (stacking degree) относительно друг друга. Сферические (с гладкой поверхностью) частицы имеют высокую плотность упаковки. Они обеспечивают  сыпучесть in systems of applying the material with minimal resistance. В добавок, сферические частицы хорошо связываются в процессе спекания.Показано, что 
 during the transition from powder particles with predominantly spherical morphology to particles of irregular shape of the same material, the elastic modulus decreases by almost 40 \%. 
