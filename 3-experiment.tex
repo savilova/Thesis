@@ -187,8 +187,10 @@ rise to a broad amorphous halo. The atomic planes that make up the crystalline
 structure give rise to diffraction peaks at certain scattering angles, 2q, corresponding
 to the d-spacings as given by Bragg’s law:
 \[
-\lambda = 2d \sin \Theta
+\lambda = 2d_{hkl} \sin \Theta
 \]
+
+$d_{hkl}$ -- геометрическая функция формы и размера базисной клетки (unit cell)
 The position of the diffraction peaks are sometimes indicated by the scattering vector q, where $q = 2\pi/d = 4\pi \sin \Theta / \lambda$. The ratio of the area under the crystalline peaks
 to the total scattered intensity is used to calculate the crystallinity.\\
 Assuming that the scattering can be separated into amorphous and crystalline
@@ -319,4 +321,8 @@ carried out from q = 0.01 to 1 A-1\\
 
 \section{Теоретические расчеты}
 
+	\paragraph{Калибровка.}
+На рис. \ref{fig:difractogram} можно увидеть типичную дифрактограмму, полученную в сканирующем эксперименте.  
+
+Калибровка и азимутальное интегрирование производилось с помощью библиотеки pyFAI, \cite{pyfai}.
 
