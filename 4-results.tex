@@ -40,43 +40,52 @@
 
 	\section{Вычитание фона}
 	
+	В отличие от обычного фонового шума, широкий сигнал рассеяния от аморфной фазы нельзя определить одним для всех измерений, так как его форма зависит от степени кристалличности. Таким образом, его оценку необходимо проводить для каждого профиля отдельно.
 	Стандартные алгоритмы для автоматического распознавания фона, основанные на полиномиальной аппроксимации, показали себя не продуктивными в нашем случае. Распознавание кристаллических пиков и аморфного фона производилось с помощью нелинейного фильтра "rolling ball". В рентгеноструктурном анализе он как правило применяется к двумерным дифрактограммам кристаллических материалов, как например, в работе \cite{ball2018}. Однако подходящая реализация для одномерных профилей, необходимая в случае дифракции на полимерах, не представлена в открытых источниках. Ниже (листинг \ref{lst:ball}) приведена реализация алгоритма для одномерных профилей на языке Python. 
-	Идеи для простой реализцации позаимствованы из работы \cite{ball-code}. 
-
+	Идеи для простой реализцации позаимствованы из работы \cite{ball-code}. Ввиду малого отношения сигнал-шум в алгоритме также применяется сглаживание фильтром Савитского-Голея.
+\vspace{5px}
 	\begin{lstlisting}[language=Python, caption=Алгоритм распознавания фона, label={lst:ball}]
 	
+
 import numpy as np
  
-def incmatrix(genl1,genl2):
-    m = len(genl1)
-    n = len(genl2)
-    M = None #to become the incidence matrix
-    VT = np.zeros((n*m,1), int)  #dummy variable
- 
-    #compute the bitwise xor matrix
-    M1 = bitxormatrix(genl1)
-    M2 = np.triu(bitxormatrix(genl2),1) 
- 
-    for i in range(m-1):
-        for j in range(i+1, m):
-            [r,c] = np.where(M2 == M1[i,j])
-            for k in range(len(r)):
-                VT[(i)*n + r[k]] = 1;
-                VT[(i)*n + c[k]] = 1;
-                VT[(j)*n + r[k]] = 1;
-                VT[(j)*n + c[k]] = 1;
- 
-                if M is None:
-                    M = np.copy(VT)
-                else:
-                    M = np.concatenate((M, VT), 1)
- 
-                VT = np.zeros((n*m,1), int)
- 
-    return M
+profile = np.load('profile.npy')
+r = 40 #ball radius
+
+t1 = np.zeros(profile.shape[0],dtype=np.float32)
+for i in range (t1.shape[0]):
+    for j in range(-r,r):
+        if ((i+j)>0 and (i+j)<t1.shape[0]):
+            
+            if(t1[i]<profile[i+j]):
+                t1[i]=profile[i+j]
+                
+t2 = np.full(profile.shape[0], 10000,dtype=np.float32)
+
+
+for i in range (t2.shape[0]):
+    for j in range(-r,r):
+        if ((i+j)>0 and (i+j)<t2.shape[0]):
+            
+            if(t2[i]>profile[i+j]):
+                t2[i]=profile[i+j]
+t3 = np.zeros(profile.shape[0],dtype=np.float32)
+count = np.zeros(profile.shape[0],dtype=np.float32)
+back = np.zeros(profile.shape[0],dtype=np.float32)
+
+for i in range(t3.shape[0]): #smooth
+    for j in range(-r,r):
+        if ((i+j)>0 and (i+j)<t3.shape[0]):
+            t3[i]+=t2[i+j] #sum
+            count[i]+=1
+            
+    back[i] = t3[i]/count[i] #average
 \end{lstlisting}
+\vspace{5px}
 
 	Принцип действия алгоритма проиллюстрирован на рис. \ref{fig:ball}. 
+	Действие алгоритма можно представить как круг заданного радиуса, который "катится" по профилю.Траектория его центра образует линию, которая и вычитается из начального профиля. Пики, чья ширина меньше радиуса круга, не вычитаются, и остаются в конечном профиле. Так, алгоритм позволяет убирать широкие пика рассеяния аморфной фазы, и оставлять только узкие кристаллические пики.
+	
 	
 	\begin{figure}[ht]
 	    \centering
@@ -88,23 +97,50 @@ def incmatrix(genl1,genl2):
 
 
 	\section{Аппроксимация пиков}
-
-	\section{Карты кристалличности}
 	
-	\section{Параметры решетки}
+	Как видно из рис. \ref{fig:fitting}, кристаллические пики хорошо аппроксимируются контуром Фойгта, как и полагается пикам рентгеновского рассеяния на кристаллах.
 	
-	
-
-\begin{figure}
-    \centering
-    \includegraphics[width=\linewidth]{fig/gauss-fit.png}
-    \caption{Аппроксимация формы пика по разным моделям}
-    \label{fig:my_label}
+		\begin{figure}[ht]\center
+\begin{tabular}{rcl}
+\includegraphics[width=0.33\linewidth]{fig/fitGaussian.pdf}
+&
+\includegraphics[width=0.33\linewidth]{fig/fitGaussian.pdf}
+&
+\includegraphics[width=0.33\linewidth]{fig/fitGaussian.pdf}
+\end{tabular}
+\caption{Фиттинг}
+\label{fig:fitting}
 \end{figure}
 	
-	\paragraph{Карты кристалличности}
+
 	
-	\begin{figure}[ht]\center
+
+	\section{Картография образцов}
+	\paragraph{Нормализация.}
+	
+	\paragraph{Частицы порошков.}Составление карт кристалличности образцов показывает, что сами порошки состоят из частичнокристаллических частиц заявленных размеров.
+	
+	\begin{figure}[h]
+	    \centering
+	    \begin{tabular}{ccc}
+\includegraphics[width=0.33\linewidth]{fig/powder_optic.png}
+&
+\includegraphics[width=0.33\linewidth]{fig/powder_dif1.png}
+&
+\includegraphics[width=0.33\linewidth]{fig/powder_dif2.png}
+\end{tabular}
+	    \caption{Отдельные частицы}
+	    \label{fig:powder}
+	\end{figure}
+	
+	\paragraph{Область SAXS.}
+	Если проинтегрировать область малоуглового рассеяния, можно получить представление о морфологии частиц.
+	
+	\paragraph{Интенсивность в области WAXS.}
+	
+	
+	
+		\begin{figure}[ht]\centering
 \begin{tabular}{cc}
 \includegraphics[width=0.5\linewidth]{fig/map-1.png}
 &
@@ -117,9 +153,6 @@ def incmatrix(genl1,genl2):
 \end{figure}
 	
 	
-
 	
 	
-	
-	Свойства и результаты прочих исследований:
-	[Vaganov corrected]
+\section{Расчет характеристик}
