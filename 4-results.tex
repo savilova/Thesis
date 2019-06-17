@@ -14,38 +14,36 @@
 	 
 	Типичное изображение, полученное на детекторе, представлено на рис. \ref{fig:difractogram}. Различие в сигналах кристаллических и аморфных областей лучше видно на фрагментах дифрактограмм в полярной системе координат, представленных на рис. \ref{fig:azim}.
 	
-\begin{figure}[t]
+		\begin{figure}[t]\center
+\begin{tabular}{cc}
+\includegraphics[width=0.5\linewidth]{fig/azim-amo.pdf}
+&
+\includegraphics[width=0.5\linewidth]{fig/azim-cryst.pdf}
+\end{tabular}
+\caption{Фрагменты дифрактограмм (в координатах $(q,\chi)$) в аморфной (слева) и кристаллической (справа) областях.}
+\label{fig:azim}
+\end{figure}
+	
+	
+\paragraph{Интегрирование.}
+
+В результате азимутального интегрирования (по $\chi$) получены одномерные профили  (рис. \ref{fig:waxs_profile}) в диапазоне $q$ от $0.5$ до $3$ \AA$^{-1}$
+В широкоугловом диапазоне наблюдаются два главных пика.
+
+\begin{figure}[h!]
     \centering
-    \includegraphics[width=\linewidth]{fig/azim.png}
-    \caption{Азимутальное интегрирование. Слева: полный проинтегрированный скан. Справа: релевантные данные в широкоугловом диапазое (без бимстопа и разделителей)}
-    \label{fig:azim}
-\end{figure}	
+    \includegraphics[width = \linewidth]{fig/waxs_profile.pdf}
+    \caption{Одномерный профиль после азимутального интегрирования}
+    \label{fig:waxs_profile}
+\end{figure}
+
+
+	\section{Вычитание фона}
 	
-	
-
-\paragraph{Интегрирование}
-
-После азимутального интегрирования получаются такие пики (рис. \ref{fig:azim} в диапазоне $\Theta$ от ?? до ?? градусов. 
-В широкоугловом диапазоне наблюдаются два главных пиков, и один(?) вспомогательный. 
-
-
-
-
-	\section{Вычитание фона, аппроксимация пиков}
 	Стандартные алгоритмы для автоматического распознавания фона, основанные на полиномиальной аппроксимации, показали себя не продуктивными в нашем случае. Распознавание кристаллических пиков и аморфного фона производилось с помощью нелинейного фильтра "rolling ball". В рентгеноструктурном анализе он как правило применяется к двумерным дифрактограммам кристаллических материалов, как например, в работе \cite{ball2018}. Однако подходящая реализация для одномерных профилей, необходимая в случае дифракции на полимерах, не представлена в открытых источниках. Ниже (листинг \ref{lst:ball}) приведена реализация алгоритма для одномерных профилей на языке Python. 
-	Идеи для простой реализцаа позаимствованы из работы \cite{ball-code},  
-	
-	Принцип действия алгоритма понятен из рис. \ref{fig:ball}. 
-	
-	\begin{figure}[h]
-	    \centering
-	    \includegraphics[width=\linewidth]{fig/ball.PNG}
-	    \caption{Caption}
-	    \label{fig:ball}
-	\end{figure}
-	  
-	
-	\begin{lstlisting}[language=Python, caption=Python example, label={lst:ball}]
+	Идеи для простой реализцации позаимствованы из работы \cite{ball-code}. 
+
+	\begin{lstlisting}[language=Python, caption=Алгоритм распознавания фона, label={lst:ball}]
 	
 import numpy as np
  
@@ -77,18 +75,25 @@ def incmatrix(genl1,genl2):
  
     return M
 \end{lstlisting}
+
+	Принцип действия алгоритма проиллюстрирован на рис. \ref{fig:ball}. 
 	
+	\begin{figure}[ht]
+	    \centering
+	    \includegraphics[width=\linewidth]{fig/ball.PNG}
+	    \caption{Caption}
+	    \label{fig:ball}
+	\end{figure}
+
+
+
+	\section{Аппроксимация пиков}
+
 	\section{Карты кристалличности}
 	
-	\section{Параметры решетки, расчеты}
+	\section{Параметры решетки}
 	
 	
-	\paragraph{Rolling-ball}
-	погрешности, чем хорошо, почему он, какие еще бывают
-	
-
-
-    \paragraph{фиттинг}
 
 \begin{figure}
     \centering
