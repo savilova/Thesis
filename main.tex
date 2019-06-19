@@ -1,6 +1,7 @@
 % ПРЕАМБУЛА
 
 \documentclass[oneside,final,14pt]{extreport}
+
 \usepackage[utf8]{inputenc}
 \usepackage[russianb]{babel}
 \usepackage{vmargin}
@@ -10,7 +11,9 @@
 \usepackage{graphicx}
 \usepackage{wrapfig}
 \usepackage{csquotes} % Инструменты для ссылок
-
+\usepackage{setspace}
+\onehalfspacing
+\usepackage{textcomp}
 
 \usepackage[backend=biber,bibencoding=utf8,sorting=ynt,maxcitenames=2,style=phys]{biblatex}
 \addbibresource{6-biblio.bib}
@@ -44,9 +47,6 @@
  
 \lstset{style=mystyle}
 
-
-
-
 \sloppy
 
 
@@ -78,7 +78,7 @@
 	\input{3-experiment.tex}
 	
 	%Результаты
-	\chapter{Результаты и обсуждение}
+	\chapter{ Результаты и обсуждение}
 	\input{4-results.tex}
 	
 

@@ -2,32 +2,19 @@
 
 
 \subsection{Технология}
+В процессе СЛС лазер сканирует подложку с порошком слой за слоем, и спекает частицы порошка, таким образом формируя трехмерную структуру, как продемонстрированно на рис. \ref{fig:printer}. 
 
-\begin{figure}[h]
+\begin{figure}[h!]
     \centering
     \includegraphics[width=\linewidth]{fig/sls-2d.pdf}
     \caption{[WIP]Принцип работы SLS-принтера}
     \label{fig:printer}
 \end{figure}
 
-
-\paragraph{Что это вообще} 
-Лазерное спекание полимеров -- технология аддитивного производства.  Индивидуальные и составные части создаются напрямую из данных CAD без потребности в специфических инструментах. Материал -- полимерный порошок -- послойно распределяется и селективно плавится с помощью лазера. Напечатанная деталь остается в окружении неиспользованного порошка.
-\paragraph{Общий принцип. }Процесс печати изделия изображен схематически на рис. \ref{fig:printer}.
-The
-feed powder hopper (1) dispenses a polymer powder into a
-recoater unit (2) which moves in x direction and thereby
-recoats thin powder layers onto the build platform (5). Residual
-powder is collected in an overflow bin (6). After each layer, the
-platform moves down in z direction. Typical layer thicknesses
-are about 50 to 200 mm. During the build process, the so-called
-part cake (3) “grows” from the bottom to the top. By volume,
-it typically consists of about 90% unsintered (aged) powder and
-of about 10% built parts (4). In each layer, the whole part cake
-surface is preheated with infrared heaters (7) up to 2 to 5 K
-below melting temperature of the material. The energy needed
-to fully melt the powder is brought in with a CO2 laser (8) that
-selectively melts the desired slice geometry. In this phase,
+Порошок подается на платформу с помощью поршня (1) и тонким слоем распределяется по сборочной платформе (2) с помощью ролика (3), который передвигается по оси $x$. Типичная толщина слоя составляет от 50 до 200 мкм. Остатки порошка собираются в контейнер (4). После сканирования каждого слоя, платформа сдвигается вниз по оси $z$. В процессе печати, так называемый part cake (5) "растет" снизу вверх. В объемном соотношении, он обычно состоит примерно на 90\% из неспеченного порошка, а изделие занимается только около 10\%. Для каждого слоя 
+ the whole part cake
+surface предварительно прогревантся инфракрасными обогревателями  (6), вплоть до 2-5 градусов ниже температуры плавления материала. Энергия, необходимая для плавления, обеспечивается СО2-лазером (7), который селективно плавит нужные места в слое (срезе).  
+the desired slice geometry. In this phase,
 unmolten powder and molten parts remain quasi-isothermal
 within the same layer.7 This so-called temperature window has
 to be lower than the melting temperature and higher than the
@@ -45,16 +32,9 @@ about 100 mm and layer times of about 10 of 40 s, the overall
 manufacturing process may take many hours or even days,4
 resulting in various powder ageing effects.
 
+Напечатанные части остаются в неиспользованном порошке, поэтому, в отличие от других методом 3D-печати, не требуют специальных опорных конструкций.
 
-
-
-Polymer laser sintering (LS) is an important additive manufacturing (AM) technology. Individual and complex parts are
-directly produced from CAD data without the need of specific tools. The raw material is a polymer powder, which is deposited layerwise
-and melted selectively with a laser. Built parts are embedded in residual unmolten powder
-
-
-
-
+Описание технологии СЛС взято из работ \cite{ageing} и \cite{sls-material}.
 
 \paragraph{Особенности сравнению с традиционными методами.}
 Thereby, product development times can be reduced tremendously.
