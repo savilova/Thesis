@@ -5,7 +5,7 @@
 
 \subsection{Плотность}
 
-Самое простое различие между фазами -- плотность. При точности измерения < 0.1 кг/м3 и аддитивности по массе кристалличность определяется как
+Самое простое различие между фазами -- плотность. При точности измерения < 0.1 кг/м3 и аддитивности по массе степень кристалличности будет определяться как
 \[
 \%_{x_{\nu}} =\frac{\rho - \rho_a}{\rho_c-\rho_a}
 \]
@@ -13,161 +13,42 @@
 
 \subsection{Термический анализ}
 Поскольку кристаллические области при нагреве плавятся, а аморфные нет, теплота плавления может быть исопльзована как мера степени кристалличности.
-Количество поглощенной энергии зависит от степени кристаличности. Эта энергия может быть измерена с использованием дифференциальной сканирующей калориметрии (ДСК). В ДСК измеряется количество теплоты, поглощаемое или выделяемое образцом, по сравнению с reference (an empty pan) во время термических переходов при постоянной скорости нагева (охлаждения), в изотермических условиях, как функция от времени.
+Эта энергия может быть измерена с использованием дифференциальной сканирующей калориметрии (ДСК). В ДСК измеряется количество теплоты, поглощаемое или выделяемое образцом, по сравнению с эталоном (пустой тигель) во время термических переходов при постоянной скорости нагева (охлаждения), в изотермических условиях, как функция от времени.
 
-Массовая доля кристаллической фазы, таким образом, может быть определена из измеренной  heat of fusion (DHm) и известного значени для полностью кристаллического материала $\Delta H^0_m$ как
-\[
-\%x_m = \frac{\Delta H_m - \Delta H_c }{\Delta H^0_m}\cdot100
-\]
-
-The term DHc is the heat of cold crystallization. A typical DSC scan consists of a heat cool reheat cycle. Because materials
-change during heating as well as upon cooling, the crystallinity should be determined
-from the scan obtained during the first heat.\\
-The implementation of соотношения, приведенного выше
-into practice to evaluate the crystallinity is not straightforward!!!\\
-issues. First, a proper baseline has to be drawn for precise determination of the crystallinity. \\
-Second, crystallization of the sample during heating, cold crystallization,
-is a serious problem in evaluating the crystallinities of samples with low
-levels of crystalline order.\\
+Массовая доля кристаллической фазы, таким образом, может быть определена из измеренной  теплоте плавления ($\Delta H_m$) и известного значения для полностью кристаллического материала $\Delta H^0_m$. При использовании этого метода , однако, встречаются трудности при работе с полимерами с низкой степенью кристалличности. Помимо этого, для корректного расчета степени кристалличности требуется тщательная оценка фоновой поправки.
 
 \subsection{Спектроскопия}
-ИК-спектроскопия, раманоское рассеяние и ЯМР -- три широко испольщуемые спектроскопические методы, используемые для анализа структурных характеристик, таких как конформация, стереорегулярность, ориентация, внутри- и межмолекулярные взаимодействия полимеров. [38] 
-Эти техники также используются для определения кристалличности, после калибровки с другими методами, такими как измерение плотности или рентгеновская дифракция.
+ИК-спектроскопия, раманоское рассеяние и ЯМР -- три широко распространенных спектроскопических метода, используемые для анализа структурных характеристик, таких как конформация, стереорегулярность, ориентация, внутри- и межмолекулярные взаимодействия полимеров. Эти техники также используются для определения кристалличности, после калибровки с другими методами, такими как измерение плотности или рентгеновская дифракция.
 
+На структурном урвоне, конформация полимерных цепей в кристаллических и аморфных областях различна. Поэтому, спектроскопические методы, такие как ИК и рамановская спектроскопия могут применяться для исследования кристаллизации, в случае, если полосы поглощения кристалличных и аморфных конформаций легко различимы.
 
-
-На структурном урвоне, информацая цепей в кристаллических и аморфных областях различна. Поэтому, спектроскопические методы такие как ИК и рамановская спектроскопия могут применяться для исследования кристаллизации, в случае, если полосы поглощения кристалличных и аморфных конформаций легко различимы.
-
-Благодаря различию между подвижностью молекул в аморфних и кристаллических регионах, твердотельный ЯМР может быть использован для характеристики кристалличности полимеров.
-
-
-
-IR absorption or reflection
-spectra from crystalline regions contain additional peaks that are absent in amorphous
-regions with the same composition. These signals may originate from deformation
-vibrations of the regular arrangement of molecular chains [38]. A degree of crystallinity
-can be estimated by comparing the intensity of these bands [39].\\
-
-The two vibrational spectroscopic
-techniques, IR and Raman spectroscopy, rely on the differences in the conformation
-and the packing of the chains in the crystalline and amorphous regions. NMR
-methods rely on the differences in either the electronic environment or the mobility
-of the nuclei on the chains in the two regions.\\
-
-\subsection{Дифракция}
-
-Наконец, полимерны цепи упакованы в кристаллические решетки, и эти решетки, даже будучи неупорядоченными, give rise кристаллические дифракуионные пики в экперименте по широкоугловому рассеянию (WAXS). Таким образом, интенсивность пиков рентгеновской дифракции может быть использована в качестве прямого измерения кристалличности полимеров. Вдобавок, во время кристаллизации полимер часто образует large-scale структуры, такие как ламели и фибрилла. Эти более крупные структуры можно наблюдать, используя малоугловое рассеяние (SAXS) и электронную микроскопию.
-
-Две наиболее употребительные техники для изучения кристаллических 
-features частично кристаллических полимеров это: WAXS, also called wide-angle X-ray
-diffraction (WAXD), and SAXS. 
-Техника WAXS чувствительня к атомарным и молекулярным структурам, и таким образом, производит прямое измерение кристалличности. SAXS чувствителен к мезоразмерным структурам, и поэтому сообщает об эффекте изменений кристалличности на морфологию полимера.
+Благодаря различию между подвижностью молекул в аморфных и кристаллических регионах, твердотельная спектроскопия ЯМР тоже может быть использован для характеристики кристалличности полимеров.
 
 
 \subsection{Микроскопия}
-Более крупные структуры, такие как сферолиты, сформированные из ламелей и фибрилл, можно изучать методами оптический микроскопии, например поляризационной микроскопии.
+Более крупные структуры, такие как сферолиты, сформированные из ламелей и фибрилл, можно изучать методами оптический микроскопии, например поляризационной микроскопией.
+
+
+\subsection{Дифракция}
+
+Наконец, полимерные цепи упакованы в кристаллические решетки, и эти решетки, даже будучи неупорядоченными друг относительно друга, порождают кристаллические дифракционные пики в экперименте по широкоугловому рассеянию (WAXS -- Wide-Angle X-ray Scattering). Таким образом, интенсивность пиков рентгеновской дифракции может быть использована в качестве \textit{прямого} измерения степени кристалличности полимеров. Вдобавок, во время кристаллизации полимер часто образует и структуры большего масштаба, такие как  фибриллы. Эти более крупные структуры можно наблюдать, используя малоугловое рассеяние (SAXS -- Small-Angle X-Ray Scattering) и электронную микроскопию. По картинам SAXS, таким образом, можно судить об эффекте изменений в кристалличности на морфологию полимера.
+
+
+Как видно из описания методов, в разных методиках измерений за кристалличность принимаются разные величины. Когда это возможно, кристалличность рекомендуется измерять посредством рентгеноструктурного анализа. 
 
 
 \subsection{Картография кристалличности}
-При изучении степени кристалличности обычно подразумевается, что кристаллиты распределены по образцу равномерно. Это далеко не всегда так. Неодногодность внешних воздействий (температуры) в процессе 3D-печати приводит также и к появлению градиентов кристалличности в конечном изделии. 
- Temperature
-and stress gradients that are present during processes such as extrusion and injection
-molding give rise to crystallinity gradients from surface to the bulk [50,51]. Such
-skinecore structures can be mapped by scanning IR or Raman techniques with a
-spatial resolution of w100 mm.\\
-The figure shows that the skin is predominantly amorphous or in the g crystalline
-form, whereas the core is more crystalline and is in the a crystalline form. Such crystallinity
-gradients occur because the polymer cools rapidly at the surface, thus quenching
-the polymer melt at the surface into its amorphous phase, and at the same making it
-to crystallize in the rapidly crystallizable g form. In contrast, in the core of the bar,
-where the polymer cools more slowly, the polymer crystallizes in the thermodynamically
-more stable a form. Such variations in the structure can also be mapped using
-scanning microbeam X-ray diffraction (m-XRD) techniques and by grazing incidence
-diffraction (GID)\\
-m-XRD techniques can routinely sample areas 50e100 mm
-in diameter. It has been used to map skinecore structural gradients that occur in a
-Kevlar fiber with a 3-mm beam
-\\
-In GID, X-rays are incident at a very small angle
-so that diffracted X-rays correspond to the crystallinity within top surface layers. A
-depth profile of the crystallinity can be generated by analyzing a sequence of scans
-obtained at a series of incidence angles\\
-Such mapping of the crystallinity gradients
-is important in understanding the effect of process variables such as temperature
-and cooling rates on the performance of the fabricated devices.\\
-Короче, раньше никто карты такие особо не строил, а если и строил, то не публиковал.
-
-\subsection{Сравнение}
-
-
-Как видно из описания методов, в разных методиках измерений за кристалличность принимаются разные величины. Самым прямым методов измерения кристалличности является РСА (ссылка?)
-
-\begin{table}[h]
-\begin{tabular}{|c|c|c|c|c|c|}
-\hline
-Метод     & Свойство & +      & -      & 4      & 5    \\ \hline
-$T_2$, мс & 2166     & 2216.7 & 2248.7 & 2284.8 & 2309 \\ \hline
-\end{tabular}
-\caption{}
-\label{undefined}
-\end{table}
-
-табличка
-Crystallinity in semicrystalline polymer is a valuable concept. However, it represents
-different entities in different techniques. Density is a measure of the macroscopic
-volume, and differences in the density brought about by differences in the
-packing of the chains in the amorphous and crystalline regions are used to determine
-the crystallinity. IR and Raman spectroscopy depend on the local conformational
-differences of the chains in the amorphous and crystalline regions. NMR senses
-the difference in mobility in the amorphous and crystalline segments and sometimes
-the rigid amorphous segments, the structure of the interfacial regions between crystalline
-and amorphous regions, and the diffusion across these interfaces. DSC relies
-on the melting transitions exhibited only by crystalline domains. X-ray scattering reveals the state of the internal order and the size of the crystalline regions and
-SAXS about lamellar structures. Optical microscopy provides information about
-spherulitic morphology. Because different aspects of the crystallinity are being
-measured by different techniques, the value determined by the various techniques
-is referred to as a CI (e.g., Eq. 3.10) that is specific to a technique (CI by density,
-CI by XRD, etc.) rather than as the degree of crystallinity\\
-Crystallinity should
-be measured by XRD whenever possible because the domains are regarded as crystalline
-or amorphous depending on their diffraction pattern. Other methods, especially
-spectroscopic techniques, are often calibrated using XRD values to convert
-the technique-dependent crystallinity to the mass fraction of crystallinity. Because
-even small crystallites, too small to be seen as crystalline by XRD, can show melting
-transitions, DSC crystallinities can be higher than the XRD crystallinities. XRD
-measures the crystallinity as reflected by the long-range ordering of the polymer
-chains. Spectroscopic techniques, IR and Raman spectroscopy, measure the crystallinity
-as reflected in the short-range interactions, which may or may not correspond
-to crystallinity as defined by long-range order. Because the signatures of the crystalline
-and the amorphous regions in various techniques may be affected to different
-extents by imperfections, interfacial interactions, and other effects, there can be
-disagreement in the crystallinity values obtained by different methods.
-Although spectroscopic techniques are secondary techniques, they are fast and
-more readily available than XRD and density. Hence they are preferred for online measurements,
-and in instances where other techniques cannot be used. Density measurements
-give only crystallinity values, whereas other techniques described here measure
-more than just the crystallinity of the polymer. They are useful in understanding the
-subtle but important characteristics of the crystalline component of the polymer.
-This is especially true for techniques such as NMR, IR, and microscopy. Even if these
-techniques are not used to measure the degree of crystallinity directly, they can be
-extremely useful to explore other aspects of crystalline domains.
+При изучении степени кристалличности обычно подразумевается, что кристаллиты распределены по образцу равномерно. Это далеко не всегда так. Неоднородность внешних условий (например, градиент температур) в процессе 3D-печати приводит также и к появлению градиентов кристалличности в конечном изделии. 
+Такие неоднородности могут быть обнаружены сканирующими техниками ИК, рамановской или терагерцовой спектроскопии (\cite{thz})  с разрешением $\sim 100$ мкм, или с помощью микрофокусной дифракции и дифракции под скользящими углами(для изучения поверхностных слоев материала), примерно с таким жже разрешением, а также  Среди этих техник выделяется нанофокусная дифракция, дающая разрешение около 1 мкм.
+Составление подобных карт важно для понимания влияния параметров процесса, таких как температура, скорость охлаждения, на характеристики изготовленных изделий.
 
 
 
+\section{[In progress]Рентгеноструктурный анализ полимеров}
 
-
-
-
-
-\section{Рентгеноструктурный анализ полимеров}
-
-
-
-\subsection{Синхротронное излучение}
-когерентные источники, йоу!
 \subsection{Упругое рассеяние}
 \subsection{2D-снимки, порошковая дифракция}
-\subsection{Неупругое рассеяние,гало}
+\subsection{Гало}
 эффекты от аморфной части
 \subsection{WAXS}
 XRD, is the most fundamental of all
@@ -222,44 +103,7 @@ XRD scans are used in the calculation of
 the crystallite size and the disorder within the crystals.\\
 The method described thus far applies to unoriented samples.\\
 
-\subsection{SAXS}
-SAXS patterns from polymers, both amorphous and semicrystalline, invariably
-consist of a central diffuse scattering at low q values (<0.05 A) due to voids
-and fibrils. Semicrystalline polymers often show additional discrete reflections
-at slightly higher q values. These reflections arise from the organization
-of polymer crystals and amorphous domains, each 5e50 nm in size, into larger length scale structures consisting of lamellae and fibrils.The
-positions of these discrete reflections are used to calculate a long spacing or long
-period using Bragg’s law and they correspond to the spacing between these
-large crystalline features. The discrete reflections that occur along the equator
-(perpendicular to the chain axis) are due to the separation of the fibrils. These fibrils
-could be from lamellar stacks [e.g., nylons and polyethylene, poly(ethylene
-terephthalate), polypropylene] or from fringed micelles (e.g., cellulose and some
-liquid crystalline fibers). A second class of discrete reflections that occur along
-or close to the meridian (chain axis) arise from lamellar stacks within which the
-folded chain crystalline lamellae 5e25 nm in height are separated by 1e3 nm thick
-noncrystallizable amorphous chain segments between the lamellae.\\
-evaluation of the fraction of the crystalline lamellae, and hence the
-crystalline content, by resolving the observed scan into central diffuse scattering
-(Id) and the lamellar peak (IL), after subtracting a suitably chosen background (Ib).\\
-A linear crystallinity can be calculated from these lamellar reflections as the ratio
-of lc/L, where lc is the height of the crystals and L is the lamellar spacing. A more
-complete analysis is usually carried out with unoriented polymers using a 1D
-scan through the lamellar peak (Fig. 3.3C). The analysis takes into account the
-differences in the electron densities of the crystalline and amorphous regions [36].
-The electron density of the crystalline regions is greater than that of the amorphous
-regions. This electron density difference (Dr) causes X-ray to be scattered at small
-angles. From a SAXS pattern, a quantity called the invariant (Q) can be calculated
-from the observed intensity, I(q), and is related to the volume fractions of the crystalline
-(fc) and amorphous (fa) components.\\
-\[
-Q = \int_0^{\infty} I(q)q^2dq
-\]
-\[
-Q = 2\pi^2 \Delta \rho^2 \varphi_c \varphi_a
-\]
-I(q) needs to be expressed in terms of electron units, and the scattering due to local
-fluctuations and other artifacts needs to properly subtracted. Integrations are typically
-carried out from q = 0.01 to 1 A-1\\
+
 
 
 \subsection{Расчеты}
@@ -280,7 +124,7 @@ carried out from q = 0.01 to 1 A-1\\
 
 
 
-\section{Материалы и оборудование}
+\section{[In progress]Материалы и оборудование}
 	Свойства и результаты прочих исследований:
 	[Vaganov corrected]
 
@@ -314,7 +158,7 @@ carried out from q = 0.01 to 1 A-1\\
 
 
 
-\section{Схема эксперимента}
+\section{[In progress]Схема эксперимента}
 Общая схема
 Принципиальная схемаизображена на рис. \ref{fig:experiment}. 
 

@@ -48,7 +48,7 @@
 \lstset{style=mystyle}
 
 \sloppy
-
+\setcounter{secnumdepth}{1}
 
 %НАЧАЛО ДОКУМЕНТА
 \begin{document}
@@ -85,16 +85,14 @@
 	%Заключение
 	\chapter*{Заключение}
 	\addcontentsline{toc}{chapter}{Заключение}
+	\addtocounter{chapter}{1}
+	\setcounter{section}{0}
 	\input{5-outro.tex}
+	
 	
 	%Библиография
 	\addcontentsline{toc}{chapter}{Литература}
     \printbibliography
-
-
-	
-	%Приложения
-	%\chapter*{Приложение}
-	%\input{7-appendix.tex}
-
+    
+    
 \end{document}
