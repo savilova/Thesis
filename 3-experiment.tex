@@ -1,61 +1,29 @@
-
-
-	
-	
-	
-	Свойства и результаты прочих исследований:
-	[Vaganov corrected]
-
 \section{Методы исследования кристалличности}
 
-Тырим описание методов и формулы из \cite{cryst3}
-Кристалличность полимеров может быть проанализирована, если обнаружить раличия в характеристиках аморфных и кристаллических областей. Приведем широко используемые методы, с помощью которых определяется кристалличность.
+Оценить степень кристалличности можно, используя различия между разнообразными характеристиками амофрной и кристаллической фаз.
+Приведем основные методы, с помощью которых изучается кристалличность \cite{cryst3}.
 
 \subsection{Плотность}
-The most basic is the
-small differences in the density of the crystalline and amorphous regions that makes it
-possible to use density measurement for the evaluation of the polymer crystallinity.
-При аддитивности по объему:
-\[
-\%_{x_m} =\frac{\nu - \nu_a}{\nu_c - \nu_a}\cdot100 = \frac{\rho_c}{\rho}\cdot\frac{\rho - \rho_a}{\rho_c-\rho_a}
-\]
-При аддитивности по массе:
+
+Самое простое различие между фазами -- плотность. При точности измерения < 0.1 кг/м3 и аддитивности по массе кристалличность определяется как
 \[
 \%_{x_{\nu}} =\frac{\rho - \rho_a}{\rho_c-\rho_a}
 \]
-Точность измерения < 0.1 кг/м3\\
-The density of the crystalline phase
-can be calculated from the crystallographic unit cell parameters. The density of
-the amorphous phase can be obtained by extrapolating to room temperature the specific
-volume of the melt measured at various temperatures by dilatometric methods
-[16,17]. The crystalline and the amorphous densities can also be determined experimentally
-by extrapolating the densities of a series of samples with known crystallinities
-as measured by XRD.\\
-Короче нужен будет рса
+Плотность кристаллической фазы расчитывается из параметров базисной клетки. Плотность аморфной фазы может быть получена экстраполяцией удельного объема, измеренного для расплава при разных температурых методами дилатометрии. Плотности также могут быть определены экспериментально, экстраполяцией значений плотности образцов с известной кристалличностью. Такие измерения требуют предварительной калибров другими методами, такими как рентгеноструктурный анализ.
 
 \subsection{Термический анализ}
+Поскольку кристаллические области при нагреве плавятся, а аморфные нет, теплота плавления может быть исопльзована как мера степени кристалличности.
+Количество поглощенной энергии зависит от степени кристаличности. Эта энергия может быть измерена с использованием дифференциальной сканирующей калориметрии (ДСК). В ДСК измеряется количество теплоты, поглощаемое или выделяемое образцом, по сравнению с reference (an empty pan) во время термических переходов при постоянной скорости нагева (охлаждения), в изотермических условиях, как функция от времени.
 
-
-Equally fundamental is the thermal characteristics of the crystalline and the amorphous
-regions. Because crystalline domains melt upon heating, and amorphous domains do
-not, heat of fusion can be a used as a measure of the degree of crystallinity. \\
-The amount of energy absorbed
-depends on the degree of crystallinity. This energy can be determined using\\
-differential scanning calorimetry (DSC). DSC measures the amount of heat absorbed
-or released by the sample relative to a reference (an empty pan) as it is taken through
-various thermal transitions at a constant heating or cooling rate, and under
-isothermal conditions as a function of time.\\
-The mass percent crystallinity (xm) of a specimen can be calculated from the
-measured heat of fusion (DHm) and the knowledge of the value for 100\% crystalline
-material $\Delta H^0_m$
-from the relation
+Массовая доля кристаллической фазы, таким образом, может быть определена из измеренной  heat of fusion (DHm) и известного значени для полностью кристаллического материала $\Delta H^0_m$ как
 \[
 \%x_m = \frac{\Delta H_m - \Delta H_c }{\Delta H^0_m}\cdot100
 \]
-The term DHc is the heat of cold crystallization. A typical DSC scan consists of a heat cool reheat cycle, all three being done at a rate of 10 C/min. Because materials
+
+The term DHc is the heat of cold crystallization. A typical DSC scan consists of a heat cool reheat cycle. Because materials
 change during heating as well as upon cooling, the crystallinity should be determined
 from the scan obtained during the first heat.\\
-The implementation of Eq. (3.5)
+The implementation of соотношения, приведенного выше
 into practice to evaluate the crystallinity is not straightforward!!!\\
 issues. First, a proper baseline has to be drawn for precise determination of the crystallinity. \\
 Second, crystallization of the sample during heating, cold crystallization,
@@ -86,8 +54,22 @@ and the packing of the chains in the crystalline and amorphous regions. NMR
 methods rely on the differences in either the electronic environment or the mobility
 of the nuclei on the chains in the two regions.\\
 
+\subsection{Дифракция}
+
+Наконец, полимерны цепи упакованы в кристаллические решетки, и эти решетки, даже будучи неупорядоченными, give rise кристаллические дифракуионные пики в экперименте по широкоугловому рассеянию (WAXS). Таким образом, интенсивность пиков рентгеновской дифракции может быть использована в качестве прямого измерения кристалличности полимеров. Вдобавок, во время кристаллизации полимер часто образует large-scale структуры, такие как ламели и фибрилла. Эти более крупные структуры можно наблюдать, используя малоугловое рассеяние (SAXS) и электронную микроскопию.
+
+Две наиболее употребительные техники для изучения кристаллических 
+features частично кристаллических полимеров это: WAXS, also called wide-angle X-ray
+diffraction (WAXD), and SAXS. 
+Техника WAXS чувствительня к атомарным и молекулярным структурам, и таким образом, производит прямое измерение кристалличности. SAXS чувствителен к мезоразмерным структурам, и поэтому сообщает об эффекте изменений кристалличности на морфологию полимера.
+
+
+\subsection{Микроскопия}
+Более крупные структуры, такие как сферолиты, сформированные из ламелей и фибрилл, можно изучать методами оптический микроскопии, например поляризационной микроскопии.
+
+
 \subsection{Картография кристалличности}
-При изучении степени кристалличности обычно подразумевается, что кристаллиты распределены по образцу равномерно. Это далеко не всегда так. Неодногодность внешних воздействий в процессе 3D-печати приводит также и к появлению градиентов кристалличности в конечном изделии. 
+При изучении степени кристалличности обычно подразумевается, что кристаллиты распределены по образцу равномерно. Это далеко не всегда так. Неодногодность внешних воздействий (температуры) в процессе 3D-печати приводит также и к появлению градиентов кристалличности в конечном изделии. 
  Temperature
 and stress gradients that are present during processes such as extrusion and injection
 molding give rise to crystallinity gradients from surface to the bulk [50,51]. Such
@@ -114,22 +96,22 @@ Such mapping of the crystallinity gradients
 is important in understanding the effect of process variables such as temperature
 and cooling rates on the performance of the fabricated devices.\\
 Короче, раньше никто карты такие особо не строил, а если и строил, то не публиковал.
-\subsection{Дифракция}
 
-Наконец, полимерны цепи упакованы в кристаллические решетки, и эти решетки, даже будучи неупорядоченными, give rise кристаллические дифракуионные пики в экперименте по широкоугловому рассеянию (WAXS). Таким образом, интенсивность пиков рентгеновской дифракции может быть использована в качестве прямого измерения кристалличности полимеров. Вдобавок, во время кристаллизации полимер часто образует large-scale структуры, такие как ламели и фибрилла. Эти более крупные структуры можно наблюдать, используя малоугловое рассеяние (SAXS) и электронную микроскопию.
+\subsection{Сравнение}
 
 
-The two commonly used X-ray scattering techniques to examine the crystalline
-features of semicrystalline polymers are: WAXS, also called wide-angle X-ray
-diffraction (WAXD), and SAXS. WAXS is sensitive to atomic and molecular structures
-and thus provides a direct measure of the crystallinity. SAXS is sensitive to
-mesoscale structures and reports on the effect of changes in the crystallinity on
-the morphology of the polymer.\\
+Как видно из описания методов, в разных методиках измерений за кристалличность принимаются разные величины. Самым прямым методов измерения кристалличности является РСА (ссылка?)
 
-\subsection{Микроскопия}
-Более крупные структуры, такие как сферолиты, сформированные из ламелей и фибрилл, можно изучать методами оптический микроскопии.
+\begin{table}[h]
+\begin{tabular}{|c|c|c|c|c|c|}
+\hline
+Метод     & Свойство & +      & -      & 4      & 5    \\ \hline
+$T_2$, мс & 2166     & 2216.7 & 2248.7 & 2284.8 & 2309 \\ \hline
+\end{tabular}
+\caption{}
+\label{undefined}
+\end{table}
 
-\subsection{Сравнение и обоснование}
 табличка
 Crystallinity in semicrystalline polymer is a valuable concept. However, it represents
 different entities in different techniques. Density is a measure of the macroscopic
@@ -169,6 +151,14 @@ subtle but important characteristics of the crystalline component of the polymer
 This is especially true for techniques such as NMR, IR, and microscopy. Even if these
 techniques are not used to measure the degree of crystallinity directly, they can be
 extremely useful to explore other aspects of crystalline domains.
+
+
+
+
+
+
+
+
 \section{Рентгеноструктурный анализ полимеров}
 
 
@@ -291,6 +281,10 @@ carried out from q = 0.01 to 1 A-1\\
 
 
 \section{Материалы и оборудование}
+	Свойства и результаты прочих исследований:
+	[Vaganov corrected]
+
+
 Для исследования структуры взяты образцы порошка Р-ОДФО и пленки, полученные на лазерной установке методом СЛС (рис. \ref{fig:particles}).
 %разные параметры синтеза?
 Характеристики частиц: размер $444$ для синтезна с 20\% ПЛА и $555$  для другого синтеза. Дисперсность(?) частиц, таким образом, конкролируется условиями синтеза (?).
@@ -324,17 +318,18 @@ carried out from q = 0.01 to 1 A-1\\
 Общая схема
 Принципиальная схемаизображена на рис. \ref{fig:experiment}. 
 
-\subsection{Источник}
+\subsection{Источник излучения}
 
-\subsection{Детектор}
+
+\subsection{2D-детектор}
 
 \subsection{Передвижение образца}
 
 
 \begin{figure}[h]
     \centering
-    \includegraphics[width=\linewidth]{fig/experiment.pdf}
-    \caption{[НЕ ДОРИСОВАНО] Схема эксперимента}
+    \includegraphics[width=\linewidth]{fig/ust.PNG}
+    \caption{Экспериментальная установка. \cite{experiment}}
     \label{fig:experiment}
 \end{figure}
 
