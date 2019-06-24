@@ -44,74 +44,33 @@
 
 
 
-\section{[In progress]Рентгеноструктурный анализ полимеров}
-\cite{2d-diff}
+\section{Рентгеноструктурный анализ полимеров}
+Большая часть сведений и иллюстраций в данном разделе взята из пособия \cite{2d-diff}.
 
 При упругом рассеянии рентгеновского излучения на полимерах упорядоченно уложенные фракменты цепей будут порождать узкие кристаллические пики при определенных углах рассеяния. 
 Соотношение между углом рассеяния $2\theta$ и расстоянием между плоскостями в кристалле определяется законом Брэгга:
 \[
-\lambda = 2d_{hkl} \sin \Theta
+\lambda = 2d_{hkl} \sin \Theta,
 \]
+где $d_{hkl}$ -- геометрическая функция формы и размера базисной клетки.
+В свою очередь, неупорядоченные цепи, с ближним порядком по типу жидкости, порождают широкое аморфное гало. При рассеянии на газах получаются обычные профили рассеяния, без признаков дифракции (рис. \ref{fig:scattering}).
 
+\begin{figure}
+    \centering
+    \includegraphics[width = \linewidth]{fig/scattering.PNG}
+    \caption{Картины рассеяния рентгеновских лучей на газе (сверху), частично-кристаллическом материале (по центру) и кристаллическом материале в присутствии воздуха (снизу)}
+    \label{fig:scattering}
+\end{figure}
 
-В свою очередь, неупорядоченные цепи, с беспорядком по типу жидкости, порождают широкое аморфное гало. 
+Положение дифракционных пиков иногда выражается через вектор рассеяния \textbf{q}, где $q = 2\pi/d = 4\pi \sin \theta / \lambda$. 
 
-\subsection{Упругое рассеяние}
-\subsection{2D-снимки, порошковая дифракция}
-\subsection{Гало}
-эффекты от аморфной части
-\subsection{WAXS}
-XRD, is the most fundamental of all
-the methods for determining the crystallinity against which the results from
-other methods may be compared.\\
-This is because the basic concept of crystalline
-order arises from the ordered packing of the polymer chains that give rise to sharp
-diffraction peaks. In contrast, the disordered chains, with liquid-like disorder, give
-rise to a broad amorphous halo. The atomic planes that make up the crystalline
-structure give rise to diffraction peaks at certain scattering angles, 2q, corresponding
-to the d-spacings as given by Bragg’s law:
+В образцах с неориентированными кристаллическими доменами, в приближении двухфазной модели степень кристалличности будет определяться как 
 
-$d_{hkl}$ -- геометрическая функция формы и размера базисной клетки (unit cell)
-The position of the diffraction peaks are sometimes indicated by the scattering vector q, where $q = 2\pi/d = 4\pi \sin \Theta / \lambda$. The ratio of the area under the crystalline peaks
-to the total scattered intensity is used to calculate the crystallinity.\\
-Assuming that the scattering can be separated into amorphous and crystalline
-peaks (two-phase model), the mass fraction of crystallinity xm can be calculated
-as the ratio of the integral of the diffraction intensity scattered by the crystalline fraction
-to the total coherent scattered intensity
 \[
-X_m = \frac{\int_0^{\infty} q^2 I_c(q) dq}{\int_0^{\infty} q^2 [I(q) - I_{Compton}(q)] dq}
+X_m = \frac{\int_0^{\infty} q^2 I_c(q) dq}{\int_0^{\infty} q^2 I(q)(q)] dq,}
 \]
-
-where Ic(q) is the intensity in the crystalline peaks, I(q) is the total scattered
-intensity, and ICompton(q) is the intensity due to Compton scattering.\\
-Routine analysis is carried out using a diffraction
-scan over a smaller q range of 0.5-3 A.\\
-Such scans are profile fitted to crystalline peaks and amorphous halos
-as shown in the figure, the areas Aa and Ac of the amorphous and the crystalline
-peaks, respectively, are determined, and a crystalline index (CI) is calculated using
-the relation
-\[
-CI = \frac{A_c}{A_a+A_c} \cdot 100
-\]
-As can be seen from the figure, the contribution of the crystalline disorder over this
-angular range is minimal, and hence Eq. (3.10) yields a reasonably accurate value for
-the crystallinity.\\
-The degree of crystallinity in polymers is a measure of the degree of order in the
-form of a fraction of the ordered molecules that are able to diffract X-rays. But
-identifying and resolving the observed scan into crystalline and amorphous peaks
-can be far from trivial when the crystalline regions are highly disordered\\
-The peaks that are sharp enough to have arisen from domains >30 A
-in size are
-generally regarded as crystalline peaks. For instance, a peak at 2q = 24 degrees , typical for interchain scattering, with a full width at half maximum of at least w2.5 degrees (at 2q w 20 degrees) corresponding to about
-three to five unit cells, is considered crystalline. Domains smaller than 30 A are considered amorphous.An equally important factor is the determination of the
-proper baseline for background subtraction, and use of an appropriate profile for
-the amorphous halo (Wile 2016)
-XRD scans are used in the calculation of
-the crystallite size and the disorder within the crystals.\\
-The method described thus far applies to unoriented samples.\\
-
-
-
+где $I_c(q)$ - интенсивность кристаллических пиков, $I(q)$ - суммарная интенсивность рассеяния.
+При обработке реальных данных интегрирование, как правило, проводится в пределах q от 0.5 до 3 \AA.
 
 \section{Материалы}
 
@@ -121,8 +80,6 @@ The method described thus far applies to unoriented samples.\\
 	\caption{Структура полимера Р-ОДФО \cite{pi-formula}}
 	\label{fig:formula}
 	\end{figure}
-
-
 
 Для исследования взяты образцы порошка Р-ОДФО и пленки, полученные на лазерной установке методом СЛС. Ранее исследованные свойства\cite{vaganov}:
  $T_g = 200$ \textdegree C, $T_m = 318$ \textdegree C, кристалличность оцененная из термического анализа -- 50\%.
